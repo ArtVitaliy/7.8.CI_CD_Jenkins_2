@@ -1,0 +1,29 @@
+{
+  "name": "7.7-cypress2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:bookingMovie:chrome": "cypress run --record --group BM --spec 'cypress/e2e/bookingMovie.cy.js' --browser chrome",
+    "test:loginAdmin:chrome": "cypress run --record --group LA --spec 'cypress/e2e/loginAdmin.cy.js' --browser chrome",
+    "test:bookingMovie:firefox": "cypress run --record --group BM --spec 'cypress/e2e/bookingMovie.cy.js' --browser firefox",
+    "test:loginAdmin:firefox": "cypress run --record --group LA --spec 'cypress/e2e/loginAdmin.cy.js' --browser firefox",
+    "test:bookingMovie:electron": "cypress run --record --group BM --spec 'cypress/e2e/bookingMovie.cy.js' --browser electron",
+    "test:loginAdmin:electron": "cypress run --record --group LA --spec 'cypress/e2e/loginAdmin.cy.js' --browser electron",
+    "test:parallel:chrome": "run-p -c test:bookingMovie:chrome test:loginAdmin:chrome",
+    "test:parallel:firefox": "run-p -c test:bookingMovie:firefox test:loginAdmin:firefox",
+    "test:parallel:electron": "run-p -c test:bookingMovie:electron test:loginAdmin:electron",
+    "test:parallel:chrome:firefox": "run-p -c test:bookingMovie:chrome test:loginAdmin:firefox",
+    "test:parallel:firefox:electron": "run-p -c test:bookingMovie:firefox test:loginAdmin:electron",
+    "test:test1:chrome": "cypress run --record --group test1 --spec 'cypress/e2e/test1/*' --browser chrome",
+    "test:test2:chrome": "cypress run --record --group test2 --spec 'cypress/e2e/test2/*' --browser chrome",
+    "test:parallel:test1:test2": "run-p -c test:test1:chrome test:test2:chrome"
+  },
+  "author": "Artyushin V.",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.1.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.0.3"
+  }
+}
